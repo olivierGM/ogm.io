@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
+import logo from './ogm.jpg';
+import background from './bgCard.jpg';
 
 const PageContainer = styled.div`
   background-color: #FAFAFA
@@ -19,43 +21,48 @@ const Card = styled.div`
   border-radius: 2px
 `
 
-const TitleSection = styled.div`
+const CardTitleSection = styled.div`
   height: 72px
+  padding: 16px
 `;
 
-const ImageSection = styled.div`
+const CardImageSection = styled.img`
   height: 256px
+  width:100%
 `;
 
-const ButtonsSection = styled.div`
+const CardButtonsSection = styled.div`
+  height: 144px
 `;
-// const cardWidth = 450;
-        // const cardHeight = 300;
-        // return {
-        //     backgroundColor: AppColor.cardBackground,
-        //     position: 'fixed',
-        //     width: cardWidth,
-        //     maxWidth: '95%',
-        //     height: cardHeight,
-        //     top: (window.innerHeight - APP_BAR_HEIGHT - cardHeight) < 20 ? 4 : ((window.innerHeight - APP_BAR_HEIGHT - cardHeight) / 2) - 20,
-        //     margin: '0 auto',
-        //     boxShadow: '0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2)',
-        //     zIndex: UPLOAD_BUTTON_INDEX + 1,
-        //     left: (window.innerWidth - cardWidth) / 2 > 0 ? (window.innerWidth - cardWidth) / 2 : 8
-        // };
+
+const TitleLogo = styled.img`
+  border-radius: 100%
+  height: 40px
+  width: 40px
+  boxShadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2)
+`;
+
+const TitleName = styled.span`
+    font-size: 14px
+`;
+
+const TitleTitle = styled.span`
+    font-size: 14px
+`;
+
 
 const App = () => (
   <PageContainer>
     <Card>
-      <TitleSection>
-        marche tu ca
-      </TitleSection>
-      <ImageSection>
-        ImageSection
-      </ImageSection>
-      <ButtonsSection>
-        ButtonsSection
-      </ButtonsSection>
+      <CardTitleSection>
+        <TitleLogo src={logo}/>
+        <TitleName>Olivier Guénette-Mégélas</TitleName>
+        <TitleTitle>DéveloppeurWeb</TitleTitle>
+      </CardTitleSection>
+      <CardImageSection src={background}/>
+      <CardButtonsSection>
+        CardButtonsSection
+      </CardButtonsSection>
     </Card>
   </PageContainer>
 );
